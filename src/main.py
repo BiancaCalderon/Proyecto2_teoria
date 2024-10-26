@@ -8,19 +8,28 @@ def main():
     print("1. Ejemplos de cadenas aceptadas semánticamente correctas:")
     frases_correctas = [
         "She eats a cake with a fork",
-        "The dog drinks the water"
+        "The dog drinks the water",
+        "He cuts the meat with a knife",
+        "The cat drinks juice",
+        "The cook eats a soup"
     ]
 
     print("\n2. Ejemplos de cadenas aceptadas semánticamente incorrectas:")
     frases_incorrectas_semanticamente = [
         "The fork eats the dog",
-        "He drinks the knife"
+        "He drinks the knife",
+        "The spoon cuts the cake",
+        "She drinks the meat",
+        "The oven eats the soup"
     ]
 
     print("\n3. Ejemplos de cadenas no aceptadas por la gramática:")
     frases_no_aceptadas = [
         "The cat the dog",
-        "Eats quickly she"
+        "Eats quickly she",
+        "Drinks the water cake",
+        "The water dog with eats",
+        "A drinks cake the"
     ]
 
     todas_las_frases = frases_correctas + frases_incorrectas_semanticamente + frases_no_aceptadas
@@ -31,7 +40,8 @@ def main():
             inicio = time.time()
             pertenece, arbol = cyk(frase, gramatica)
             fin = time.time()
-            tiempo = (fin - inicio) * 1000  # Convertir a milisegundos
+            tiempo = (fin - inicio) * 1000
+  # Convertir a milisegundos
 
             print(f"La frase '{frase}' {'sí' if pertenece else 'no'} pertenece al lenguaje.")
             print(f"Tiempo de ejecución: {tiempo:.2f} ms")
